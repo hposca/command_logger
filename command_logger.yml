@@ -1,0 +1,4 @@
+---
+- hosts: tests
+  roles:
+    - command_logger
