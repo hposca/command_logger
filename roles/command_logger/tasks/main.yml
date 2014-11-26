@@ -1,0 +1,21 @@
+# vim: set ts=2 sw=2 et :
+---
+- name: "Adding command logger | RedHat"
+  copy:
+    src: bashrc.redhat
+    dest: /etc/bashrc
+    owner: root
+    group: root
+    mode: 0644
+  sudo: yes
+  when: ansible_os_family == 'RedHat'
+
+- name: "Adding command logger | Debian"
+  copy:
+    src: bashrc.debian
+    dest: /etc/bash.bashrc
+    owner: root
+    group: root
+    mode: 0644
+  sudo: yes
+  when: ansible_os_family == 'Debian'
